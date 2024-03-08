@@ -16,15 +16,12 @@ scheduler = APScheduler()
 scheduler.init_app(app)
 
 from controllers.auth import Login, SignUp
-from controllers.trade import AddTrade, RecentTrades
-from controllers.predict import PredictionModel
+from controllers.jobs import Jobs
 
 
 api.add_resource(Login, '/login')
 api.add_resource(SignUp, '/sign_up')
-api.add_resource(AddTrade, '/add_trade')
-api.add_resource(RecentTrades, '/recent_trades')
-api.add_resource(PredictionModel, '/predict')
+api.add_resource(Jobs, '/job_list')
 
 # def call_predict():
 #     with app.test_client() as client:

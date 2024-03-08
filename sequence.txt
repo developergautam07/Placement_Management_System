@@ -1,0 +1,10 @@
+1. landing page
+2. registration/login section
+3. admin registration/login section
+4. Job Opportunities Listing
+5. Internship Opportunities Listing
+6. One-on-One Sessions
+7. Interview Preparation
+8. Feedback of Companies
+9. Prioritization of Last Year's Students
+10. Mock Test Chatbot (Virtual Assistant)

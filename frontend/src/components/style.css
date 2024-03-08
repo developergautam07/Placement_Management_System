@@ -1,0 +1,154 @@
+/* Navigation bar */
+nav {
+	background-color: #222;
+	color: #fff;
+	padding: 10px;
+	font-family: 'Open Sans', sans-serif;
+  }
+  
+  nav a {
+	color: #fff;
+	text-decoration: none;
+  }
+  
+  /* Jumbotron */
+  .jumbotron {
+	background-color: #f1f1f1;
+	padding: 50px;
+	margin-top: 30px;
+	text-align: center;
+  }
+  
+  .jumbotron h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 20px;
+  }
+  
+  .jumbotron p {
+	font-size: 1.2em;
+	margin-bottom: 20px;
+  }
+  
+  /* Features section */
+  .container {
+	margin-top: 50px;
+	font-family: 'Lato', sans-serif;
+  }
+  
+  .container h2 {
+	font-size: 2.5em;
+	margin-bottom: 20px;
+  }
+  
+  .container p {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+  }
+  
+  /* Call to action section */
+  .container-fluid {
+	background-color: #222;
+	color: #fff;
+	padding: 50px;
+	margin-top: 50px;
+	text-align: center;
+  }
+  
+  .container-fluid h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 20px;
+  }
+  
+  .container-fluid p {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+  }
+  
+  /* Footer */
+  footer {
+	background-color: #f1f1f1;
+	padding: 10px;
+	margin-top: 50px;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+  }
+  
+  footer a {
+	color: #222;
+  }
+  
+  h1, h2 {
+	font-weight: 200;
+	margin: 0.4rem;
+  }
+  
+  h1 {
+	font-size: 3.5rem;
+  }
+  
+  h2 {
+	font-size: 2rem;
+	color: rgb(22, 13, 7);
+  }
+  
+  @media (min-width: 992px) {
+	#hero {
+	  padding-left: 160px;
+	}
+  }
+  
+  #hero h1 {
+	margin: 0;
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 56px;
+	color: #45505b;
+  }
+  
+  #hero p {
+	color: #45505b;
+	margin: 15px 0 0 0;
+	font-size: 26px;
+	font-family: "Poppins", sans-serif;
+  }
+  
+  #hero p span {
+	color: #0563bb;
+	letter-spacing: 1px;
+  }
+
+  .typed {
+	display: inline-block;
+	width: 200px;
+	height: 1em;
+  }
+
+  .sidebar {
+	width: 200px; /* Set the width of the sidebar as needed */
+	height: 100vh; /* Set the height of the sidebar to 100% of the viewport height */
+	position: fixed; /* Fix the position so it stays in place when scrolling */
+  }
+  
+  .sidebar-visible {
+	background-color: #222;
+	color: #fff;
+	/* padding: 10px; */
+	/* margin-top: 50px; */
+	text-align: center;
+	/* overflow-x: hidden; */
+	/* transform: translateX(0); */
+  }
+  
+  .sidebar-hidden {
+	display: none; 
+	/* transform: translateX(-100%); */
+  }
+
+  .content-shifted-right {
+	margin-left: 20%; /* Adjust as needed */
+  }
+  
