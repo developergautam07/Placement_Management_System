@@ -22,7 +22,6 @@ function StudentLogin() {
         }),
       });
       if (response.ok) {
-        // Redirect or perform other actions upon successful login
         console.log('Login successful!');
         const data = await response.json();
         localStorage.setItem('user', JSON.stringify(data));
@@ -65,7 +64,11 @@ function StudentLogin() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary">Login</button>
+            <div className='d-flex align-items-center me-3'>
+              <button type="submit" className="btn btn-success me-3">Login</button>
+              <a href="/signup" className="btn btn-primary me-3">SignUp</a>
+            </div>
+            
           </form>
         </div>
       </div>

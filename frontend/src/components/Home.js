@@ -1,12 +1,22 @@
 import React from 'react';
 import './style.css';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
+import { useNavigate } from 'react-router-dom';
 
 function LandingPage() {
   const el = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user) {
+      setIsLoggedIn(true);
+    }
+
     const typed = new Typed(el.current, {
       strings: ["Opportunity Cruiser", "Career Opportunities Platform!"],
       startDelay: 300,
@@ -20,6 +30,13 @@ function LandingPage() {
       typed.destroy();
     };
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+
+    navigate('/');
+  };
 
   return (
     <div>
@@ -37,16 +54,24 @@ function LandingPage() {
               <a className="nav-link" href="/features">Features</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/pricing">Pricing</a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="/contact">Contact</a>
             </li>
+            {isLoggedIn && (
+              <li className="nav-item">
+                <a className="nav-link" href="/jobs">Jobs</a>
+              </li>
+            )}
           </ul>
         </div>
         <div>
-          <a className="btn btn-outline-warning me-2" href="/login" role="button">Student</a>
-          <a className="btn btn-outline-warning me-2" href="/register" role="button">Admin</a>
+          {isLoggedIn ? (
+            <button className="btn btn-outline-danger me-2" onClick={() => handleLogout()}>Logout</button>
+          ) : (
+            <>
+              <a className="btn btn-outline-warning me-2" href="/login" role="button">Student</a>
+              <a className="btn btn-outline-warning me-2" href="/admin" role="button">Admin</a>
+            </>
+          )}
         </div>
       </nav>
 

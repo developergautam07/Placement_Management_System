@@ -71,11 +71,6 @@ const Signup = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/pricing">
-                Pricing
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/contact">
                 Contact
               </a>
@@ -125,7 +120,7 @@ const Signup = () => {
                     label="I agree to the terms and conditions" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="btn-block">
+                <Button variant="success" type="submit" className="btn-block">
                   Sign up
                 </Button>
               </Form>

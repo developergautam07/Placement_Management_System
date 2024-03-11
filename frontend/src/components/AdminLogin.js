@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import './style.css';
 import { API_ENDPOINTS } from '../config/config';
+import { useNavigate } from 'react-router-dom';
 
 function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(API_ENDPOINTS.LOGIN, { // Update API endpoint for admin login
+      const response = await fetch(API_ENDPOINTS.LOGIN, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,11 +22,17 @@ function AdminLogin() {
           'is_admin': true
         }),
       });
-      if (response.ok) {
-        // Redirect or perform other actions upon successful login
+
+      const data = await response.json();
+      
+      if (response.ok && data.status === 200) {
         console.log('Admin login successful!');
+        console.log("DATA: ", data)
+        localStorage.setItem('user', JSON.stringify(data));
+        navigate('/jobs');
       } else {
         console.error('Admin login failed.');
+        navigate('/');
       }
     } catch (error) {
       console.error('Error logging in:', error);

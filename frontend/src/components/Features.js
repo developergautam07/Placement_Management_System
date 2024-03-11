@@ -1,7 +1,20 @@
 import React from 'react';
 import './style.css';
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user) {
+      setIsLoggedIn(true);
+    }
+
+  }, []);
+
   return (
     <div>
      {/* <!-- Navigation Bar --> */}
@@ -19,11 +32,13 @@ function Home() {
 					<a class="nav-link" href="/features">Features</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/pricing">Pricing</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="/contact">Contact</a>
 				</li>
+				{isLoggedIn && (
+				<li className="nav-item">
+					<a className="nav-link" href="/jobs">Jobs</a>
+				</li>
+				)}
 			</ul>
 		</div>
 	</nav>
@@ -58,7 +73,7 @@ function Home() {
 				<p>Prepare for interviews with confidence using our comprehensive interview preparation resources.</p>
 			</div>
 			<div class="col-lg-4">
-				<h2>Feedback of Companies</h2>
+				<h2>Company Reviews & Ratings</h2>
 				<p>Prepare for technical interviews, behavioral interviews, and case interviews by reviewing personalized feedback</p>
 			</div>
 			<div class="col-lg-4">
