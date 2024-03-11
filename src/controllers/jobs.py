@@ -33,3 +33,37 @@ class Jobs(Resource):
             print("jobs: ", jobs)
             jobs_list = [job.to_dict() for job in jobs]
             return jsonify({'message': 'Jobs fetched successfully', 'data': jobs_list, 'status': 200})
+        
+    def post(self):
+        data = request.json.get('record')
+        if not data:
+            return jsonify({'message': 'No data provided', 'status': 400})
+        
+        title = data.get('title')
+        description = data.get('description')
+        jobroles = data.get('jobroles')
+        company = data.get('company')
+        location = data.get('location')
+        salary = data.get('salary')
+        link = data.get('Action')
+        job_type = data.get('type')
+
+        if not (title and description and jobroles and company and salary and link and job_type):
+            return jsonify({'message': 'Incomplete data provided', 'status': 400})
+
+        try:
+            new_job = Job(
+                title=title,
+                description=description,
+                jobroles=jobroles,
+                company=company,
+                location=location,
+                salary=salary,
+                link=link,
+                type=job_type
+            )
+            db.session.add(new_job)
+            db.session.commit()
+            return jsonify({'message': 'Job added successfully', 'status': 200})
+        except Exception as e:
+            return jsonify({'message': f'Failed to add job: {str(e)}', 'status': 500})

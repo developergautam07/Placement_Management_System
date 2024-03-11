@@ -23,8 +23,9 @@ class Login(Resource):
         if not user:
             return jsonify({'message': 'Invalid credentials', 'status': 401})
         else:
-            print(dict(user))
-            return jsonify({'message': 'Login Successfull', 'data': user._asdict(), 'status': 200})
+            user = user._asdict()
+            user['isAdmin'] = is_admin
+            return jsonify({'message': 'Login Successfull', 'data': user, 'status': 200})
     
 class SignUp(Resource):
     def post(self):
