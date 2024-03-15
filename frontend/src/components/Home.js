@@ -79,7 +79,7 @@ function LandingPage() {
         <div className="container text-center">
           <h1><span ref={el}></span></h1>
           <p className="lead">Your platform for career opportunities.</p>
-          <a className="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+          <a className="btn btn-primary btn-lg" href="/features" role="button">Learn More</a>
         </div>
       </div>
 
