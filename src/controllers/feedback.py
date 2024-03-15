@@ -37,7 +37,7 @@ class Feedback(Resource):
 
         # Extract data from the request
         review = data.get('reviews')
-        jobrole = data.get('jobroles')
+        jobrole = data.get('jobrole')
         company = data.get('company')
         rating = data.get('rating')
         
