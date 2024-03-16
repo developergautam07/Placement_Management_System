@@ -41,4 +41,4 @@ api.add_resource(ContactUs, '/contact')
 if __name__ == "__main__":
     # scheduler.add_job(func = call_predict, id='Scheduled Task', trigger = 'interval', minutes = 5)
     # scheduler.start()
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
