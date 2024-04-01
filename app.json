@@ -1,0 +1,13 @@
+{
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ],
+    "environments": {
+      "build": {
+        "root": "src"
+      }
+    }
+  }
+  
